@@ -83,42 +83,62 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ChainGetParentMessages(const Json::Value& param01) 
+            Json::Value ChainGetParentMessages(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.ChainGetParentMessages",p);
+                Json::Value result = this->CallMethod("Filecoin.ChainGetParentMessages",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ChainGetParentReceipts(const Json::Value& param01) 
+            Json::Value ChainGetParentReceipts(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.ChainGetParentReceipts",p);
+                Json::Value result = this->CallMethod("Filecoin.ChainGetParentReceipts",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ChainGetPath(const Json::Value& param01, const Json::Value& param02) 
+            Json::Value ChainGetPath(const Json::Value& param01, const Json::Value& param02) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
-                this->CallNotification("Filecoin.ChainGetPath",p);
+                Json::Value result = this->CallMethod("Filecoin.ChainGetPath",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ChainGetRandomnessFromBeacon(const Json::Value& param01, int param02, int param03, const std::string& param04) 
+            Json::Value ChainGetRandomnessFromBeacon(const Json::Value& param01, int param02, int param03, const std::string& param04) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
                 p.append(param03);
                 p.append(param04);
-                this->CallNotification("Filecoin.ChainGetRandomnessFromBeacon",p);
+                Json::Value result = this->CallMethod("Filecoin.ChainGetRandomnessFromBeacon",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ChainGetRandomnessFromTickets(const Json::Value& param01, int param02, int param03, const std::string& param04) 
+            Json::Value ChainGetRandomnessFromTickets(const Json::Value& param01, int param02, int param03, const std::string& param04) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
                 p.append(param03);
                 p.append(param04);
-                this->CallNotification("Filecoin.ChainGetRandomnessFromTickets",p);
+                Json::Value result = this->CallMethod("Filecoin.ChainGetRandomnessFromTickets",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value ChainGetTipSet(const Json::Value& param01) 
             {
@@ -254,12 +274,16 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ClientFindData(const Json::Value& param01, const Json::Value& param02) 
+            Json::Value ClientFindData(const Json::Value& param01, const std::string& param02) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
-                this->CallNotification("Filecoin.ClientFindData",p);
+                Json::Value result = this->CallMethod("Filecoin.ClientFindData",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value ClientGenCar(const Json::Value& param01, const std::string& param02) 
             {
@@ -312,31 +336,47 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ClientListDataTransfers() 
+            Json::Value ClientListDataTransfers() 
             {
                 Json::Value p;
                 p = Json::arrayValue;
-                this->CallNotification("Filecoin.ClientListDataTransfers",p);
+                Json::Value result = this->CallMethod("Filecoin.ClientListDataTransfers",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ClientListDeals() 
+            Json::Value ClientListDeals() 
             {
                 Json::Value p;
                 p = Json::arrayValue;
-                this->CallNotification("Filecoin.ClientListDeals",p);
+                Json::Value result = this->CallMethod("Filecoin.ClientListDeals",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ClientListImports() 
+            Json::Value ClientListImports() 
             {
                 Json::Value p;
                 p = Json::arrayValue;
-                this->CallNotification("Filecoin.ClientListImports",p);
+                Json::Value result = this->CallMethod("Filecoin.ClientListImports",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ClientListRetrievals() 
+            Json::Value ClientListRetrievals() 
             {
                 Json::Value p;
                 p = Json::arrayValue;
-                this->CallNotification("Filecoin.ClientListRetrievals",p);
+                Json::Value result = this->CallMethod("Filecoin.ClientListRetrievals",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            Json::Value ClientMinerQueryOffer(const std::string& param01, const Json::Value& param02, const Json::Value& param03) 
+            Json::Value ClientMinerQueryOffer(const std::string& param01, const Json::Value& param02, const std::string& param03) 
             {
                 Json::Value p;
                 p.append(param01);
@@ -402,17 +442,25 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ClientStartDeal(const Json::Value& param01) 
+            std::string ClientStartDeal(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.ClientStartDeal",p);
+                Json::Value result = this->CallMethod("Filecoin.ClientStartDeal",p);
+                if (result.isString())
+                    return result.asString();
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void ClientStatelessDeal(const Json::Value& param01) 
+            std::string ClientStatelessDeal(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.ClientStatelessDeal",p);
+                Json::Value result = this->CallMethod("Filecoin.ClientStatelessDeal",p);
+                if (result.isString())
+                    return result.asString();
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value CreateBackup(const std::string& param01) 
             {
@@ -551,42 +599,66 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void MpoolBatchPush(const Json::Value& param01) 
+            Json::Value MpoolBatchPush(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.MpoolBatchPush",p);
+                Json::Value result = this->CallMethod("Filecoin.MpoolBatchPush",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void MpoolBatchPushMessage(const Json::Value& param01, const Json::Value& param02) 
+            Json::Value MpoolBatchPushMessage(const Json::Value& param01, const Json::Value& param02) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
-                this->CallNotification("Filecoin.MpoolBatchPushMessage",p);
+                Json::Value result = this->CallMethod("Filecoin.MpoolBatchPushMessage",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void MpoolBatchPushUntrusted(const Json::Value& param01) 
+            Json::Value MpoolBatchPushUntrusted(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.MpoolBatchPushUntrusted",p);
+                Json::Value result = this->CallMethod("Filecoin.MpoolBatchPushUntrusted",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void MpoolCheckMessages(const Json::Value& param01) 
+            Json::Value MpoolCheckMessages(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.MpoolCheckMessages",p);
+                Json::Value result = this->CallMethod("Filecoin.MpoolCheckMessages",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void MpoolCheckPendingMessages(const std::string& param01) 
+            Json::Value MpoolCheckPendingMessages(const std::string& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.MpoolCheckPendingMessages",p);
+                Json::Value result = this->CallMethod("Filecoin.MpoolCheckPendingMessages",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void MpoolCheckReplaceMessages(const Json::Value& param01) 
+            Json::Value MpoolCheckReplaceMessages(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.MpoolCheckReplaceMessages",p);
+                Json::Value result = this->CallMethod("Filecoin.MpoolCheckReplaceMessages",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value MpoolClear(bool param01) 
             {
@@ -618,11 +690,15 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void MpoolPending(const Json::Value& param01) 
+            Json::Value MpoolPending(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.MpoolPending",p);
+                Json::Value result = this->CallMethod("Filecoin.MpoolPending",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value MpoolPush(const Json::Value& param01) 
             {
@@ -655,12 +731,16 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void MpoolSelect(const Json::Value& param01, double param02) 
+            Json::Value MpoolSelect(const Json::Value& param01, double param02) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
-                this->CallNotification("Filecoin.MpoolSelect",p);
+                Json::Value result = this->CallMethod("Filecoin.MpoolSelect",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value MpoolSetConfig(const Json::Value& param01) 
             {
@@ -785,12 +865,16 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void MsigGetPending(const std::string& param01, const Json::Value& param02) 
+            Json::Value MsigGetPending(const std::string& param01, const Json::Value& param02) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
-                this->CallNotification("Filecoin.MsigGetPending",p);
+                Json::Value result = this->CallMethod("Filecoin.MsigGetPending",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             std::string MsigGetVested(const std::string& param01, const Json::Value& param02, const Json::Value& param03) 
             {
@@ -958,11 +1042,15 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void PaychList() 
+            Json::Value PaychList() 
             {
                 Json::Value p;
                 p = Json::arrayValue;
-                this->CallNotification("Filecoin.PaychList",p);
+                Json::Value result = this->CallMethod("Filecoin.PaychList",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value PaychNewPayment(const std::string& param01, const std::string& param02, const Json::Value& param03) 
             {
@@ -1045,11 +1133,15 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void PaychVoucherList(const std::string& param01) 
+            Json::Value PaychVoucherList(const std::string& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.PaychVoucherList",p);
+                Json::Value result = this->CallMethod("Filecoin.PaychVoucherList",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value PaychVoucherSubmit(const std::string& param01, const Json::Value& param02, const std::string& param03, const std::string& param04) 
             {
@@ -1075,12 +1167,16 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void StateAllMinerFaults(int param01, const Json::Value& param02) 
+            Json::Value StateAllMinerFaults(int param01, const Json::Value& param02) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
-                this->CallNotification("Filecoin.StateAllMinerFaults",p);
+                Json::Value result = this->CallMethod("Filecoin.StateAllMinerFaults",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value StateCall(const Json::Value& param01, const Json::Value& param02) 
             {
@@ -1162,25 +1258,37 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void StateListActors(const Json::Value& param01) 
+            Json::Value StateListActors(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.StateListActors",p);
+                Json::Value result = this->CallMethod("Filecoin.StateListActors",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void StateListMessages(const Json::Value& param01, const Json::Value& param02, int param03) 
+            Json::Value StateListMessages(const Json::Value& param01, const Json::Value& param02, int param03) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
                 p.append(param03);
-                this->CallNotification("Filecoin.StateListMessages",p);
+                Json::Value result = this->CallMethod("Filecoin.StateListMessages",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void StateListMiners(const Json::Value& param01) 
+            Json::Value StateListMiners(const Json::Value& param01) 
             {
                 Json::Value p;
                 p.append(param01);
-                this->CallNotification("Filecoin.StateListMiners",p);
+                Json::Value result = this->CallMethod("Filecoin.StateListMiners",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             std::string StateLookupID(const std::string& param01, const Json::Value& param02) 
             {
@@ -1235,12 +1343,16 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void StateMinerActiveSectors(const std::string& param01, const Json::Value& param02) 
+            Json::Value StateMinerActiveSectors(const std::string& param01, const Json::Value& param02) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
-                this->CallNotification("Filecoin.StateMinerActiveSectors",p);
+                Json::Value result = this->CallMethod("Filecoin.StateMinerActiveSectors",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             std::string StateMinerAvailableBalance(const std::string& param01, const Json::Value& param02) 
             {
@@ -1253,12 +1365,16 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void StateMinerDeadlines(const std::string& param01, const Json::Value& param02) 
+            Json::Value StateMinerDeadlines(const std::string& param01, const Json::Value& param02) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
-                this->CallNotification("Filecoin.StateMinerDeadlines",p);
+                Json::Value result = this->CallMethod("Filecoin.StateMinerDeadlines",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value StateMinerFaults(const std::string& param01, const Json::Value& param02) 
             {
@@ -1294,13 +1410,17 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void StateMinerPartitions(const std::string& param01, int param02, const Json::Value& param03) 
+            Json::Value StateMinerPartitions(const std::string& param01, int param02, const Json::Value& param03) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
                 p.append(param03);
-                this->CallNotification("Filecoin.StateMinerPartitions",p);
+                Json::Value result = this->CallMethod("Filecoin.StateMinerPartitions",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             Json::Value StateMinerPower(const std::string& param01, const Json::Value& param02) 
             {
@@ -1370,13 +1490,17 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void StateMinerSectors(const std::string& param01, const Json::Value& param02, const Json::Value& param03) 
+            Json::Value StateMinerSectors(const std::string& param01, const Json::Value& param02, const Json::Value& param03) 
             {
                 Json::Value p;
                 p.append(param01);
                 p.append(param02);
                 p.append(param03);
-                this->CallNotification("Filecoin.StateMinerSectors",p);
+                Json::Value result = this->CallMethod("Filecoin.StateMinerSectors",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             std::string StateNetworkName() 
             {
@@ -1676,11 +1800,15 @@ namespace lotus {
                 else
                     throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
-            void WalletList() 
+            Json::Value WalletList() 
             {
                 Json::Value p;
                 p = Json::arrayValue;
-                this->CallNotification("Filecoin.WalletList",p);
+                Json::Value result = this->CallMethod("Filecoin.WalletList",p);
+                if (result.isArray())
+                    return result;
+                else
+                    throw jsonrpc::JsonRpcException(jsonrpc::Errors::ERROR_CLIENT_INVALID_RESPONSE, result.toStyledString());
             }
             std::string WalletNew(const std::string& param01) 
             {
