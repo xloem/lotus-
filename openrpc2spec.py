@@ -12,7 +12,18 @@ def openrpc2example(obj, default):
         return {}
     result = obj['schema']['examples'][0]
     if result is None:
-        return default
+        if 'type' not in obj['schema']:
+            return default
+        for type in obj['schema']['type']:
+            if type == 'string':
+                if 'title' not in obj['schema']:
+                    continue
+                return obj['schema']['title']
+            elif type == 'array':
+                if 'items' not in obj['schema']:
+                    continue
+                return [openrpc2example(item, {}) for item in obj['schema']['items']]
+        raise Exception('unrecognised type: ' + repr(obj))
     return result
 
 spec = []
